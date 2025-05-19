@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  lidar-carbon:
+    build: .
+    container_name: lidar-carbon-app
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - PYTHONPATH=/usr/local/lib/python3.10/site-packages
+      - WBT_DIR=/usr/local/bin
+      - TEMP_DIR=/app/temp
+      - DATA_DIR=/app/data
+    restart: unless-stopped 
