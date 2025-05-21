@@ -1,0 +1,74 @@
+<svg viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fond -->
+  <rect width="900" height="700" fill="#f8f9fa" rx="10" ry="10"/>
+  
+  <!-- Titre -->
+  <text x="450" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#333">Configuration du LiDAR Carbon Stock Analyzer</text>
+
+  <!-- Configuration Docker -->
+  <rect x="50" y="70" width="390" height="270" fill="#e3f2fd" stroke="#1976d2" stroke-width="2" rx="8" ry="8"/>
+  <text x="245" y="95" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#1976d2">Docker Configuration</text>
+  
+  <!-- Dockerfile -->
+  <rect x="70" y="115" width="350" height="205" fill="#ffffff" stroke="#bbdefb" stroke-width="1" rx="5" ry="5"/>
+  <text x="95" y="135" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#333">Dockerfile</text>
+  <text x="95" y="160" font-family="Arial, sans-serif" font-size="14" fill="#333">• Image de base: python:3.10-slim</text>
+  <text x="95" y="185" font-family="Arial, sans-serif" font-size="14" fill="#333">• Dépendances système: build-essential,</text>
+  <text x="105" y="205" font-family="Arial, sans-serif" font-size="14" fill="#333">libgdal-dev, wget, unzip, curl, vim</text>
+  <text x="95" y="230" font-family="Arial, sans-serif" font-size="14" fill="#333">• Installation de WhiteboxTools</text>
+  <text x="95" y="255" font-family="Arial, sans-serif" font-size="14" fill="#333">• Installation des dépendances Python</text>
+  <text x="95" y="280" font-family="Arial, sans-serif" font-size="14" fill="#333">• Port exposé: 8501 (Streamlit)</text>
+  <text x="95" y="305" font-family="Arial, sans-serif" font-size="14" fill="#333">• Commande: streamlit run app.py</text>
+
+  <!-- Docker Compose -->
+  <rect x="460" y="70" width="390" height="270" fill="#e8f5e9" stroke="#388e3c" stroke-width="2" rx="8" ry="8"/>
+  <text x="655" y="95" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#388e3c">Docker Compose</text>
+  
+  <rect x="480" y="115" width="350" height="205" fill="#ffffff" stroke="#c8e6c9" stroke-width="1" rx="5" ry="5"/>
+  <text x="505" y="135" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#333">docker-compose.yml</text>
+  <text x="505" y="160" font-family="Arial, sans-serif" font-size="14" fill="#333">• Service: lidar-carbon</text>
+  <text x="505" y="185" font-family="Arial, sans-serif" font-size="14" fill="#333">• Container: lidar-carbon-app</text>
+  <text x="505" y="210" font-family="Arial, sans-serif" font-size="14" fill="#333">• Port mapping: 8501:8501</text>
+  <text x="505" y="235" font-family="Arial, sans-serif" font-size="14" fill="#333">• Volume: ./data:/app/data</text>
+  <text x="505" y="260" font-family="Arial, sans-serif" font-size="14" fill="#333">• Environment variables:</text>
+  <text x="515" y="285" font-family="Arial, sans-serif" font-size="14" fill="#555">- PYTHONPATH=/usr/local/lib/python3.10/site-packages</text>
+  <text x="515" y="305" font-family="Arial, sans-serif" font-size="14" fill="#555">- WBT_DIR, TEMP_DIR, DATA_DIR</text>
+
+  <!-- Variables d'environnement -->
+  <rect x="50" y="360" width="800" height="120" fill="#fff8e1" stroke="#ffa000" stroke-width="2" rx="8" ry="8"/>
+  <text x="450" y="385" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#ffa000">Variables d'Environnement</text>
+  
+  <rect x="70" y="405" width="760" height="55" fill="#ffffff" stroke="#ffe082" stroke-width="1" rx="5" ry="5"/>
+  
+  <text x="100" y="435" font-family="Arial, sans-serif" font-size="14" fill="#333">• PYTHONPATH=/usr/local/lib/python3.10/site-packages</text>
+  <text x="450" y="435" font-family="Arial, sans-serif" font-size="14" fill="#333">• WBT_DIR=/usr/local/bin</text>
+  <text x="100" y="460" font-family="Arial, sans-serif" font-size="14" fill="#333">• TEMP_DIR=/app/temp</text>
+  <text x="450" y="460" font-family="Arial, sans-serif" font-size="14" fill="#333">• DATA_DIR=/app/data</text>
+
+  <!-- Dépendances Python -->
+  <rect x="50" y="500" width="800" height="180" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2" rx="8" ry="8"/>
+  <text x="450" y="525" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#9c27b0">Dépendances Python (requirements.txt)</text>
+  
+  <rect x="70" y="545" width="760" height="115" fill="#ffffff" stroke="#e1bee7" stroke-width="1" rx="5" ry="5"/>
+  
+  <!-- Première colonne -->
+  <text x="100" y="570" font-family="Arial, sans-serif" font-size="14" fill="#333">• streamlit==1.32.0</text>
+  <text x="100" y="595" font-family="Arial, sans-serif" font-size="14" fill="#333">• numpy==1.24.3</text>
+  <text x="100" y="620" font-family="Arial, sans-serif" font-size="14" fill="#333">• pandas==2.0.3</text>
+  <text x="100" y="645" font-family="Arial, sans-serif" font-size="14" fill="#333">• scikit-learn==1.3.0</text>
+  
+  <!-- Deuxième colonne -->
+  <text x="320" y="570" font-family="Arial, sans-serif" font-size="14" fill="#333">• laspy[lazrs]==2.4.1</text>
+  <text x="320" y="595" font-family="Arial, sans-serif" font-size="14" fill="#333">• rasterio==1.3.8</text>
+  <text x="320" y="620" font-family="Arial, sans-serif" font-size="14" fill="#333">• whitebox==2.3.1</text>
+  <text x="320" y="645" font-family="Arial, sans-serif" font-size="14" fill="#333">• matplotlib==3.7.1</text>
+  
+  <!-- Troisième colonne -->
+  <text x="540" y="570" font-family="Arial, sans-serif" font-size="14" fill="#333">• plotly==5.18.0</text>
+  <text x="540" y="595" font-family="Arial, sans-serif" font-size="14" fill="#333">• pyvista==0.42.3</text>
+  <text x="540" y="620" font-family="Arial, sans-serif" font-size="14" fill="#333">• reportlab==4.0.9</text>
+  <text x="540" y="645" font-family="Arial, sans-serif" font-size="14" fill="#333">• earthengine-api==0.1.379</text>
+  
+  <!-- Note de bas de page -->
+  <text x="450" y="680" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">Configuration utilisée pour l'application LiDAR Carbon Stock Analyzer</text>
+</svg>
