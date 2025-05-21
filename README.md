@@ -17,7 +17,7 @@ Cette application Streamlit permet d'analyser des données LiDAR pour estimer le
 - Génération de rapports
 
 ![Workflow](carbone2.png)
-![Workflow](distribution spatial du stock de carbone.png)
+![Workflow](distribution_spatial_du_stock_de_carbone.png)
 
 ## Installation et déploiement
 
