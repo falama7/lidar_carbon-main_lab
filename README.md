@@ -74,8 +74,16 @@ whitebox_tools --help
 
 Si vous utilisez cette application dans vos travaux, veuillez citer :
 
-[Citation à ajouter]
+@misc{njila2025lidar,
+  author       = {Donald Njila},
+  title        = {lidar\_carbon-main\_lab},
+  year         = {2025},
+  version      = {1.0},
+  howpublished = {\url{https://github.com/falama7/lidar_carbon-main_lab}},
+  note         = {Code source GitHub}
+}
+
 
 ## Licence
 
-[Licence à définir]
+Licence MIT
