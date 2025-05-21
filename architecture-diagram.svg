@@ -1,0 +1,76 @@
+<svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fond -->
+  <rect width="900" height="600" fill="#f8f9fa" rx="10" ry="10"/>
+  
+  <!-- Titre -->
+  <text x="450" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#333">Architecture LiDAR Carbon Stock Analyzer</text>
+  
+  <!-- Container Docker Principal -->
+  <rect x="50" y="70" width="800" height="480" fill="#e6f3ff" stroke="#2196f3" stroke-width="2" rx="10" ry="10"/>
+  <text x="450" y="90" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#2196f3">Container Docker (lidar-carbon-app)</text>
+  
+  <!-- Interface Streamlit -->
+  <rect x="100" y="110" width="700" height="100" fill="#ffffff" stroke="#333" stroke-width="2" rx="10" ry="10"/>
+  <text x="450" y="140" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle">Interface Utilisateur Streamlit (app.py)</text>
+  <text x="450" y="170" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#666">Gestion des interactions et du workflow d'analyse</text>
+  
+  <!-- Modules de l'application -->
+  <rect x="100" y="230" width="170" height="250" fill="#e8f5e9" stroke="#43a047" stroke-width="2" rx="8" ry="8"/>
+  <text x="185" y="260" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">LidarProcessor</text>
+  <text x="185" y="280" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">Prétraitement</text>
+  <text x="185" y="300" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">Nettoyage</text>
+  <text x="185" y="320" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">Génération de modèles</text>
+  <text x="185" y="340" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">Classification</text>
+  
+  <rect x="290" y="230" width="170" height="250" fill="#fff3e0" stroke="#ff9800" stroke-width="2" rx="8" ry="8"/>
+  <text x="375" y="260" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">DataVisualizer</text>
+  <text x="375" y="280" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">Nuage de points 3D</text>
+  <text x="375" y="300" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">Visualisation modèles</text>
+  <text x="375" y="320" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">Visualisation classes</text>
+  <text x="375" y="340" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">Affichage résultats</text>
+  
+  <rect x="480" y="230" width="170" height="250" fill="#e1f5fe" stroke="#03a9f4" stroke-width="2" rx="8" ry="8"/>
+  <text x="565" y="260" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">CarbonEstimator</text>
+  <text x="565" y="280" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">Méthode allométrique</text>
+  <text x="565" y="300" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">Machine Learning</text>
+  <text x="565" y="320" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">Méthode hybride</text>
+  <text x="565" y="340" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">Calcul statistiques</text>
+  
+  <rect x="670" y="230" width="130" height="250" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2" rx="8" ry="8"/>
+  <text x="735" y="260" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">ReportGenerator</text>
+  <text x="735" y="280" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">PDF Reports</text>
+  <text x="735" y="300" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">Export cartes</text>
+  <text x="735" y="320" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">Export données</text>
+  
+  <!-- Outils et dépendances externes -->
+  <rect x="100" y="500" width="700" height="30" fill="#eeeeee" stroke="#333" stroke-width="1" rx="5" ry="5"/>
+  <text x="450" y="520" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">WhiteboxTools | Dépendances : laspy, scikit-learn, plotly, reportlab, etc.</text>
+  
+  <!-- Volumes Docker -->
+  <rect x="30" y="550" width="150" height="30" fill="#e8eaf6" stroke="#3f51b5" stroke-width="1" rx="5" ry="5"/>
+  <text x="105" y="570" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Volume: /app/data</text>
+  
+  <rect x="200" y="550" width="150" height="30" fill="#e8eaf6" stroke="#3f51b5" stroke-width="1" rx="5" ry="5"/>
+  <text x="275" y="570" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Volume: /app/temp</text>
+
+  <!-- Workflow -->
+  <path d="M260 210 L335 210" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M450 210 L525 210" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M630 210 L690 210" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Flèches entre Interface et Modules -->
+  <path d="M450 170 L450 210" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Définir les markers pour les flèches -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#666"/>
+    </marker>
+  </defs>
+  
+  <!-- Étapes du Workflow -->
+  <text x="185" y="200" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555">1. Traitement LiDAR</text>
+  <text x="375" y="200" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555">2. Visualisation</text>
+  <text x="565" y="200" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555">3. Estimation Carbone</text>
+  <text x="735" y="200" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555">4. Rapports</text>
+</svg>
