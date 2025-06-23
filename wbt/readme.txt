@@ -56,6 +56,113 @@ for more details.
 * Release Notes: *
 ******************
 
+Version 2.4.0 (17-05-2024)
+- Removed the requirement for an input DEM in the VectorStreamNetworkAnalysis tool. 
+- Fixed a bug in the RepairStreamVectorTopology tool that reversed the direction of some stream arcs.
+- Added the CorrectStreamVectorDirection tool.
+- Added the ability to preserve all vertices to the RasterStreamsToVector tool.
+- Added the ExtractByAttribute tool to filter out vector features by attribute characteristics.
+- Added the DeviationFromRegionalDirection tool.
+- Added the OtsuThresholding tool, which uses Ostu's method for optimal binary thresholding,
+  transforming the input image into background and foreground pixels.
+- Added the TopographicHachures tool.
+- Fixed a bug with polygon holes in the RasterToVectorPolygons tool.
+- Fixed a bug with the IndividualTreeDetection tool that prevented use of the min_height parameter
+  when applied in batch mode.
+- Added the ConvergenceIndex tool.
+
+Version 2.3.0 (28-03-2023)
+- Added the new Whitebox Runner v2.0. This version of WbRunner is an entirely new application with many 
+  advancements over the previous version of the WbRunner. It is now written in pure Rust (compared with 
+  the old Python TkInter app) using the egui user-interface library. It has a more modern feel, is 
+  cross-platform, and has no dependencies (including Python). You can now open multiple tools simultaneously. 
+- WbRunner is now the preferred way now for installing the Whitebox Toolset Extension (WTE).
+- Added the LaunchWbRunner and InstallWbExtension tools so that the Whitebox Runner will be more 
+  accessible from other Whitebox frontends. This way users will always have a good fall-back if the 
+  frontend is not up-to-date with the WBT backend, since WbRunner is always current with the installed 
+  version of WBT.
+- Added the IndividualTreeDetection tool for identifying points in a LiDAR point cloud that are associated 
+  with the tops of individual trees.
+- Added the NormalizeLidar tool for normalizing LiDAR point clouds, i.e., converting their z-values 
+  from elevation to height-above-ground.
+- Natural Resources Canada (NRCan) has sponsored the open-sourcing of two tools contained in the extension,
+  VectorStreamNetworkAnalysis and RepairStreamVectorTopology. These two tools are are now available in the 
+  WbT Open Core.
+- Fixed a bug with the LidarShift tool. The tool was calculating the shift in transformed coordinates
+  incorrectly leading to very strange outputs.
+- The MultiscaleTopographicPositionImage tool now takes an optional hillshade image as input.
+- Lowered the peak memory requirement of the D8FlowAccumulation tool.
+- Fixed a bug with the location of the settings.json file when running plugin tools, that sometimes
+  led to the file being located in a top-level directory, and therefore sometimes yielding a 
+  permissions error when running on systems without admin rights.
+- Fixed a bug with the vector attribute table reader that caused issue with the VectorPolygonsToRaster 
+  tool.
+- Fixed a bugs in the HorizonAngle and ExposureTowardsWindFlux tools.
+- Added a point time interpolation parameter to the LidarNearestNeighbourGridding tool.
+- Added the ListUniqueValuesRaster tool.
+- Fixed a bug with the SetNodataValue tool, where the raster data type is updated to a signed integer
+  if the background value is negative and the input image has an unsigned data type.
+- Added a 'mean' option to the VectorPointsToRaster tool.
+
+Version 2.2.0 (23-10-2022)
+- Added the TravellingSalesmanProblem tool for identifying short routes connecting multiple locations.
+- Added the HeatMap tool for performing kernel density estimation (KDE) from vector points.
+- Added the MultiplyOverlay tool.
+- Added the MaxUpslopeValue tool.
+- Added the ConditionedLatinHypercube tool for stratified random sampling (credit Dr. Dan Newman).
+- Added the HighPassBilateralFilter tool, useful for emphasizing image texture.
+- Fixed a bug with the DirectDecorrelationStretch tool.
+- Fixed a bug in the automatic install of the Whitebox extensions that affected Windows users.
+- Fixed a bug with the persistence of the compress_rasters parameter. Python users were unable to
+  turn off the compress flag previously.
+- Added the option to set and get the maximum number of processors (--max_procs flag) used by WBT in 
+  the Whitebox Python API.
+- Added the option to output average point density and nominal point spacing to the LidarInfo tool.
+- Updated the ClassifyOverlapPoints and FlightlineOverlap tools to use information contained within
+  the Point Source ID property, rather than a hard-coded time difference threshold previously used.
+- Fixed an issue that affected many tools when input rasters use either NaN or Inf as NoData values.
+- Fixed an issue with the way that NoData values are handled during the euclidean distance transform
+  that impacted the EuclideanDistance, EuclideanAllocation, BufferRaster, and 
+  ElevationAboveStreamEuclidean tools.
+- Fixed a bug with the LidarInfo tool that occurred when the user did not specify the mandatory 
+  output parameter along with a non LAS input file.
+- Fixed a bug with the Truncate tool; the output image was always integer, and therefore it did not
+  work as expected when using more than zero significant digits.
+- Fixed a bug with the ConstructVectorTIN tool that resulted in an error when no field data are used.
+- Modified the code for writing to the settings.json file so that rather than issuing an error when
+  the app doesn't have write permission, it simply prints a warning and carries on.
+- Fixed bugs in the Geomorphons tool (submitted by Dr. Dan Newman).
+- Fixed a bug with the writing of PolyLineZ vectors.
+- Updated the Hillshade, MultidirectionalHillshade, and RelativeAspect tools to use the more robust 
+  5x5 3rd order bivariate polynomial method of Florinsky (2016) for rectangular grid DEMs, and the 
+  3x3 method, also described by Florinsky (2016), for DEMs in geographic coordinates. This is a large 
+  improvement in accuracy for calculating these surface morphology parameters on geographic coordinates
+  compared with the 'z-conversion fudge factor' method used previously.
+- Added support for Apple Silicon; you can now download WhiteboxTools binaries compiled on an M1 Mac.
+
+Version 2.1.0 (30-01-2022)
+- The Geomorphons tool for landform classification is now available.
+- Added the MeanCurvature, GaussianCurvature, MinimalCurvature and MaximalCurvature tools.
+- Added GaussianScaleSpace tool, which uses the fast Gaussian approximation algorithm to produce 
+  scaled land-surface parameter measurements from an input DEM.
+- Added LocalQuadraticRegression tool, which is an implementation of the constrained quadratic 
+  regression algorithm using a flexible window size described in Wood (1996).
+- Added the MaxUpslopeElevChange tool, the upslope equivalent of the MaxDownslopeElevChange tool.
+- Updated the Slope, Aspect, ProfileCurvature, TangentialCurvature, PlanCurvature, and
+  TotalCurvature tools to use the more robust 5x5 3rd order bivariate polynomial method
+  of Florinsky (2016) for rectangular grid DEMs, and the 3x3 method, also described by
+  Florinsky (2016), for DEMs in geographic coordinates. This is a large improvement in
+  accuracy for calculating these surface morphology parameters on geographic coordinates
+  compared with the 'z-conversion fudge factor' method used previously.
+- Added the LidarShift tool for applying a simple shift to point x,y,z coordinates.
+- Added the ability to automatically install the Whitebox extensions using the Python API.
+- Fixed a bug in the lower quartile valley mapping method of the ExtractValleys tool.
+- Fixed a bug in the PennockLandformClass tool.
+- Fixed a bug in the Shapefile reader that affected files of the PointZ ShapeType.
+- Fixed a bug with the CsvPointsToVector tool.
+- Reduced the peak memory usage of the D8Pointer and Rho8Pointer tools by about 37.5%.
+- Several other minor bugs have been fixed.
+
 Version 2.0.0 (30-08-2021)
 - The most important feature in this release is the addition of support for reading and writing the LAZ
   compressed LiDAR format for all of the LiDAR tools in WBT.
